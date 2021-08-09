@@ -1,0 +1,7 @@
+//by parameter
+POST http://localhost:3000/values/farhan
+###
+//by query
+POST http://localhost:3000/values?longi=100000&&lati=200000
+###
+GET http://localhost:3000/

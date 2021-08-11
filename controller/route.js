@@ -30,9 +30,11 @@ app.post('/clean',(req,res)=>{
 io.on("connection",async (socket)=>{
     await Loc.find((err,doc)=>{
         if(!err){
-            let data='';
+            let data=[];
+            let j = 0; 
             for(let i of doc){
-                data += "Longitude: "+i.longitude+"  "+"Latitude: "+i.latitude+"\n";
+                data[j]={lat:i.latitude,long:i.longitude};
+                j++;
             }
             socket.emit("update",data);
         }

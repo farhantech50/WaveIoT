@@ -23,10 +23,6 @@ app.post('/values',(req,res)=>{
     
 })
 
-app.post('/clean',(req,res)=>{
-    Loc.db.dropCollection('locations');
-    res.sendStatus(200);
-})
 io.on("connection",async (socket)=>{
     await Loc.find((err,doc)=>{
         if(!err){

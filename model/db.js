@@ -9,6 +9,8 @@ const locationSchema = mongo.Schema({
     latitude: {
         type: String
     },
+},{
+    versionKey: false
 });
 
 module.exports = mongo.model('locations',locationSchema);

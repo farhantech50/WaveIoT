@@ -1,4 +1,4 @@
 //by query
-POST http://powerguidex.com/values?longi=90.368815&&lati=23.751816
+POST http://powerguidex.com/values?longi=90.366685&&lati=23.751752
 ###
 GET http://powerguidex.com/

@@ -4,7 +4,7 @@ const app = express.Router();
 const Loc = require('../model/db');
 const fs = require('fs');
 app.get('/',(req,res)=>{
-    res.render('index');
+    res.render('map');
 })
 
 app.post('/values',(req,res)=>{

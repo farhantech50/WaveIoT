@@ -22,6 +22,6 @@ app.use('/',loginRoute);
 
 const mqttServer = require('./mqtt/mqtt');
 
-mqttServer();
+//mqttServer();
 
 

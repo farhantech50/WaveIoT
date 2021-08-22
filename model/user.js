@@ -9,7 +9,6 @@ const userSchema = mongo.Schema({
     },
     password: {
         type: String,
-        required: true
     },
 },{
     versionKey: false

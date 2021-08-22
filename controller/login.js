@@ -33,7 +33,7 @@ app.post('/',async(req,res)=>{
     if (user) {
         bcrypt.compare( req.body.pass, user.password, function(err, result) {
             if (result) {
-                res.redirect('/');
+                res.redirect('/map');
                 } else {
                 res.send("Wrong username or password.");
                 }

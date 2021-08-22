@@ -16,9 +16,9 @@ app.set('view engine','ejs');
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(express.static(__dirname + "/public"));
-app.use('/',route);
-app.use('/login',loginRoute);
 
+app.use('/map',route);
+app.use('/',loginRoute);
 
 
 

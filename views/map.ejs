@@ -15,9 +15,8 @@
     center: new google.maps.LatLng(23.748637, 90.368703),
     zoom: 16,
   });
-  const infowindow = new google.maps.InfoWindow({
-    content: "<h2>Click</h2>"+"<button onClick=hello()>button</button>"
-  });
+  const infoWindow = new google.maps.InfoWindow();
+
   setInterval(()=>{
     const socket = io();
     DeleteMarkers();
@@ -26,7 +25,13 @@
         const marker = new google.maps.Marker({       
         position: new google.maps.LatLng(data[i].lat,data[i].long),
         icon:'./icon.png',
-        map: map
+        map: map,
+        label:parseInt(Math.random()*100).toString()
+      });
+      marker.addListener("click", () => {
+        infoWindow.close();
+        infoWindow.setContent(marker.getLabel());
+        infoWindow.open(marker.getMap(), marker);
       });
       markers.push(marker); //to remove market later, using this array to store the markers used
       }
@@ -40,9 +45,8 @@
         }
         markers = [];
     };
-  function hello(){
-   alert("You clicked a marker");
-  }
+    // Add a click listener for each marker, and set up the info window.
+
  
   </script>
 

@@ -1,7 +1,9 @@
 module.exports=function(){
-    var mqtt = require('mqtt')
+    
+const mqtt = require('mqtt')
+const alert = require('alert'); 
 
-var options = {
+const options = {
     host: "yee248bb.us-east-1.emqx.cloud",
     port: 15539,
     protocol: 'mqtt',
@@ -10,7 +12,7 @@ var options = {
 }
 
 //initialize the MQTT client
-var client = mqtt.connect(options);
+const client = mqtt.connect(options);
 
 //setup the callbacks
 client.on('connect', function () {
@@ -24,6 +26,7 @@ client.subscribe('wave');
 
 client.on('message', function (topic, message) {
     const locData = message.toString().split('=');
+    alert(locData);
     console.log(locData);
 });
 }

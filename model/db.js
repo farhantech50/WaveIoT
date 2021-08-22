@@ -9,6 +9,9 @@ const locationSchema = mongo.Schema({
     latitude: {
         type: String
     },
+    clientID: {
+        type: String
+    }
 },{
     versionKey: false
 });

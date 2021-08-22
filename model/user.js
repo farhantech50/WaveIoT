@@ -5,7 +5,6 @@ mongo.connect('mongodb+srv://farhan:farhan500@cluster0.15ihw.mongodb.net/myFirst
 const userSchema = mongo.Schema({
     username: {
         type: String,
-        required: true
     },
     password: {
         type: String,

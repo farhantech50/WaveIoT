@@ -20,6 +20,8 @@ app.use(express.static(__dirname + "/public"));
 app.use('/map',route);
 app.use('/',loginRoute);
 
+const mqttServer = require('./mqtt/mqtt');
 
+mqttServer();
 
 

@@ -7,7 +7,7 @@ require('dotenv').config();
 async function createUser(){
     User.remove({});
     const saltRounds = 10;
-    bcrypt.hash(process.env.PASS, saltRounds, function(err, hash) {
+    await bcrypt.hash(process.env.PASS, saltRounds, function(err, hash) {
         const user = new User({
             username: process.env.USER_NAME,
             password: hash
@@ -31,7 +31,7 @@ app.post('/',async(req,res)=>{
     const user = await User.findOne({ username: req.body.username }); 
 
     if (user) {
-        bcrypt.compare( req.body.pass, user.password, function(err, result) {
+        await bcrypt.compare( req.body.pass, user.password, function(err, result) {
             if (result) {
                 res.redirect('/map');
                 } else {

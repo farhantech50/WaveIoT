@@ -39,7 +39,7 @@ app.post('/',async(req,res)=>{
                 }
         });
     } else {
-        res.send("Wrong username or password.");
+        res.render("login",{val:1});
     }
     } catch (error) {
     console.log(error);

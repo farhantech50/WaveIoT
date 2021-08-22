@@ -23,7 +23,7 @@ createUser();
 
 
 app.get('/',(req,res)=>{
-    res.render('login');
+    res.render('login',{val:0});
 })
 
 app.post('/',async(req,res)=>{
@@ -35,7 +35,7 @@ app.post('/',async(req,res)=>{
             if (result) {
                 res.redirect('/map');
                 } else {
-                res.send("Wrong username or password.");
+                    res.render("login",{val:1});
                 }
         });
     } else {

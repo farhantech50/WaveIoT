@@ -59,6 +59,9 @@
             <form action="/" method="POST">
               <div class="form-row">
                 <div class="col-lg-7">
+                  <%if (val==1) { %>
+                    <p style="color:red">Wrong Username or Password</p>
+                  <% } %>
                   <input type="text" class="form-control my-4 p-3" placeholder="Username" id="username" name="username">
                 </div>  
               </div>

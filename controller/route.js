@@ -6,7 +6,7 @@ const fs = require('fs');
 app.get('/',(req,res)=>{
     res.render('map');
 })
-
+/* //HTTP Rest for posting gps data to database
 app.post('/values',(req,res)=>{
     const locVal  = new Loc ({
         longitude: req.query.longi,
@@ -23,7 +23,7 @@ app.post('/values',(req,res)=>{
     });
     
 })
-
+*/
 io.on("connection",async (socket)=>{
     await Loc.find((err,doc)=>{
         if(!err){

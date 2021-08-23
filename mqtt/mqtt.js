@@ -28,7 +28,7 @@ client.on('message', function (topic, message) {
     const locVal  = new Loc ({
         latitude: locData[0],
         longitude: locData[1],
-        clientID: locData[2]
+        clientid: locData[2]
     })
     locVal.save((err,doc)=>{
         if(!err){

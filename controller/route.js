@@ -10,7 +10,8 @@ app.get('/',(req,res)=>{
 app.post('/values',(req,res)=>{
     const locVal  = new Loc ({
         longitude: req.query.longi,
-        latitude: req.query.lati
+        latitude: req.query.lati,
+        clientid: req.query.cid
     })
     locVal.save((err,doc)=>{
         if(!err){
@@ -29,7 +30,7 @@ io.on("connection",async (socket)=>{
             let data=[];
             let j = 0; 
             for(let i of doc){
-                data[j]={lat:i.latitude,long:i.longitude};
+                data[j]={lat:i.latitude,long:i.longitude,cid:i.clientid},
                 j++;
             }
             socket.emit("update",data);

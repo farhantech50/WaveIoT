@@ -22,15 +22,16 @@
     DeleteMarkers();
     socket.on("update",(data)=>{
         for (let i = 0; i < data.length; i++) {
+          console.log(data[i].cid.toString());
         const marker = new google.maps.Marker({       
         position: new google.maps.LatLng(data[i].lat,data[i].long),
         icon:'./icon.png',
         map: map,
-        label:parseInt(Math.random()*100).toString()
+        title: data[i].cid.toString()
       });
       marker.addListener("click", () => {
         infoWindow.close();
-        infoWindow.setContent(marker.getLabel());
+        infoWindow.setContent(marker.getTitle());
         infoWindow.open(marker.getMap(), marker);
       });
       markers.push(marker); //to remove market later, using this array to store the markers used

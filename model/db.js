@@ -9,7 +9,7 @@ const locationSchema = mongo.Schema({
     latitude: {
         type: String
     },
-    clientID: {
+    clientid: {
         type: String
     }
 },{

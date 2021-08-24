@@ -25,11 +25,22 @@ client.subscribe('wave');
 
 client.on('message', function (topic, message) {
     const locData = message.toString().split('=');
-    const locVal  = new Loc ({
-        latitude: locData[0],
-        longitude: locData[1],
-        clientid: locData[2]
-    })
-    locVal.save();
+    switch(locData[2]){
+        case "WSB1":
+            (new Loc.WSB1({
+            latitude: locData[0],
+            longitude: locData[1],
+            clientid: locData[2]
+            })).save();
+            break;
+        case "WSB2":
+            (new Loc.WSB2({
+            latitude: locData[0],
+            longitude: locData[1],
+            clientid: locData[2]
+            })).save();
+            break;
+    }
+
 });
 }

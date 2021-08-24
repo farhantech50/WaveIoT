@@ -22,7 +22,6 @@
     DeleteMarkers();
     socket.on("update",(data)=>{
         for (let i = 0; i < data.length; i++) {
-          console.log(data[i].cid.toString());
         const marker = new google.maps.Marker({       
         position: new google.maps.LatLng(data[i].lat,data[i].long),
         icon:'./icon.png',

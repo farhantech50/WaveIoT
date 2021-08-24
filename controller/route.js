@@ -6,7 +6,7 @@ const fs = require('fs');
 app.get('/',(req,res)=>{
     res.render('map');
 })
-/* //HTTP Rest for posting gps data to database
+ //HTTP Rest for posting gps data to database
 app.post('/values',(req,res)=>{
     const locVal  = new Loc ({
         longitude: req.query.longi,
@@ -23,8 +23,20 @@ app.post('/values',(req,res)=>{
     });
     
 })
-*/
+
 io.on("connection",async (socket)=>{
+     //To find the latest data from the collection
+    await Loc.find().sort({_id:-1}).limit(1).then((doc)=>{
+        if(doc){
+            let data=[];
+            data[0]={lat:doc[0].latitude,long:doc[0].longitude,cid:doc[0].clientid};
+            socket.emit("update",data);
+        }
+        else{
+            console.log(err)
+        }
+    });
+    /*
     await Loc.find((err,doc)=>{
         if(!err){
             let data=[];
@@ -38,7 +50,7 @@ io.on("connection",async (socket)=>{
         else{
             console.log(err)
         }
-    })
+    })*/
 })
     return app;
 };

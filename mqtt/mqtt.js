@@ -30,13 +30,6 @@ client.on('message', function (topic, message) {
         longitude: locData[1],
         clientid: locData[2]
     })
-    locVal.save((err,doc)=>{
-        if(!err){
-            console.log(locVal);
-        }
-        else {
-            console.log('Error during record update : ' + err);
-        }
-    });
+    locVal.save();
 });
 }

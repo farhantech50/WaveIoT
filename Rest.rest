@@ -1,2 +1,2 @@
 //by query
-POST http://powerguidex.com/map/values?longi=90.366685&&lati=23.751752&&cid=WS-B1
+POST http://localhost:3000/map/values?longi=90.366685&&lati=23.751752&&cid=WS-B1

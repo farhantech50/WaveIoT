@@ -33,9 +33,6 @@ io.on("connection",async (socket)=>{
             if(doc){
                 data[i]={lat:doc[0].latitude,long:doc[0].longitude,cid:doc[0].clientid};
             }
-            else{
-                console.log(`Location value for ${Loc[i]} not found`);
-            }
         }).catch((error)=>{
             console.log(`Location value for WSB${i+1} not found`);
         });

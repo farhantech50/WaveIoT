@@ -22,18 +22,21 @@
     DeleteMarkers();
     socket.on("update",(data)=>{
         for (let i = 0; i < data.length; i++) {
-        const marker = new google.maps.Marker({       
-        position: new google.maps.LatLng(data[i].lat,data[i].long),
-        icon:'./icon.png',
-        map: map,
-        title: data[i].cid.toString()
-      });
-      marker.addListener("click", () => {
-        infoWindow.close();
-        infoWindow.setContent(marker.getTitle());
-        infoWindow.open(marker.getMap(), marker);
-      });
-      markers.push(marker); //to remove market later, using this array to store the markers used
+          if(data[i]==null){
+            continue;
+          }
+          const marker = new google.maps.Marker({       
+          position: new google.maps.LatLng(data[i].lat,data[i].long),
+          icon:'./icon.png',
+          map: map,
+          title: data[i].cid.toString()
+        });
+          marker.addListener("click", () => {
+          infoWindow.close();
+          infoWindow.setContent(marker.getTitle());
+          infoWindow.open(marker.getMap(), marker);
+        });
+        markers.push(marker); //to remove market later, using this array to store the markers used
       }
     })
     },3000);

@@ -40,6 +40,13 @@ client.on('message', function (topic, message) {
             clientid: locData[2]
             })).save();
             break;
+        case "WSB3":
+            (new Loc[2]({
+            latitude: locData[0],
+            longitude: locData[1],
+            clientid: locData[2]
+            })).save();
+            break;
     }
 
 });

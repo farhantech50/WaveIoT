@@ -5,4 +5,8 @@ app.get('/',(req,res)=>{
     res.render('dashboard');
 })
 
+app.get('/logout',(req,res)=>{
+    res.redirect('/');
+})
+
 module.exports=app;

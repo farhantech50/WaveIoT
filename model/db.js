@@ -20,8 +20,9 @@ const locationSchema = mongo.Schema({
 });
 const WSB1= db.model('WSB1',locationSchema);
 //const WSB2= db.model('WSB2',locationSchema);
+//const WSB3= db.model('WSB3',locationSchema);
 
-let arr = [WSB1,/*WSB2*/];
+let arr = [WSB1,/*WSB2,WSB3*/];
 module.exports = arr;
 
 

@@ -6,25 +6,7 @@ const fs = require('fs');
 app.get('/',(req,res)=>{
     res.render('map');
 })
-/*
- //HTTP Rest for posting gps data to database
-app.post('/values',(req,res)=>{
-    const locVal  = new Loc ({
-        longitude: req.query.longi,
-        latitude: req.query.lati,
-        clientid: req.query.cid
-    })
-    locVal.save((err,doc)=>{
-        if(!err){
-            res.sendStatus(200);
-        }
-        else {
-            console.log('Error during record update : ' + err);
-        }
-    });
-    
-})
-*/
+
 io.on("connection",async (socket)=>{
      //To find the latest data from the collection
     let data=[];

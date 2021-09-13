@@ -33,7 +33,7 @@ app.post('/',async(req,res)=>{
     if (user) {
         await bcrypt.compare( req.body.pass, user.password, function(err, result) {
             if (result) {
-                res.redirect('/map');
+                res.redirect('/dashboard');
                 } else {
                     res.render("login",{val:1});
                 }

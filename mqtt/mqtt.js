@@ -3,8 +3,8 @@ module.exports=function(){
 const mqtt = require('mqtt')
 const Loc = require('../model/db');
 const options = {
-    host: "yee248bb.us-east-1.emqx.cloud",
-    port: 15539,
+    host: "ecede9a1.us-east-1.emqx.cloud",
+    port: 15954,
     protocol: 'mqtt',
     username: 'waveiot',
     password: 'Farhan500'

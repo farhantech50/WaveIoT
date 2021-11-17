@@ -3,8 +3,8 @@ module.exports=function(){
 const mqtt = require('mqtt')
 const Loc = require('../model/db');
 const options = {
-    host: "ecede9a1.us-east-1.emqx.cloud",
-    port: 15954,
+    host: "p51e0fc1.ap-southeast-1.emqx.cloud",
+    port: 15895,
     protocol: 'mqtt',
     username: 'waveiot',
     password: 'Farhan500'
@@ -33,7 +33,7 @@ client.on('message', function (topic, message) {
             clientid: locData[2]
             })).save();
             break;
-        case "WSB2":
+        /*case "WSB2":
             (new Loc[1]({
             latitude: locData[0],
             longitude: locData[1],
@@ -46,7 +46,7 @@ client.on('message', function (topic, message) {
             longitude: locData[1],
             clientid: locData[2]
             })).save();
-            break;
+            break;*/
     }
 
 });
